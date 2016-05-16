@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////
-//			     Example Program				//
-//	 Prints Fibonacci numbers to fib_out.txt	//
-//	  until the user terminates the process		//
+//               Example Program                //
+//   Prints Fibonacci numbers to fib_out.txt    //
+//    until the user terminates the process     //
 //////////////////////////////////////////////////
 
 #include <fstream>

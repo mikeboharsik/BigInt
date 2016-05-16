@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////
-//		   Written by Michael Hennessy			//
-//	For Dr. David Adams's Computing III Class	//
-//			UML Spring Semester 2015			//
+//         Written by Michael Hennessy          //
+//  For Dr. David Adams's Computing III Class   //
+//          UML Spring Semester 2015            //
 //////////////////////////////////////////////////
 
 #include "BigInt.h"
