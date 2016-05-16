@@ -1,6 +1,10 @@
-#include <ctime>
+//////////////////////////////////////////////////
+//			     Example Program				//
+//	 Prints Fibonacci numbers to fib_out.txt	//
+//	  until the user terminates the process		//
+//////////////////////////////////////////////////
+
 #include <fstream>
-#include <Windows.h>
 
 #include "BigInt.h"
 
@@ -16,21 +20,20 @@ int main( int argc, char* argv[] )
 	ofstream out;
 	out.open( "fib_out.txt" );
 	time_t first;
+	
+	unsigned long long count = 0;
 
 	while ( 1 )
 	{
-		first = clock();
-
 		out << x << "\n";
 
 		result = x + y;
 		x = y;
 		y = result;
-
-		if ( GetAsyncKeyState( VK_ESCAPE ) )
-			break;
-
-		cout << (float)( clock() - first ) / (float)CLOCKS_PER_SEC << "\n";
+		
+		count++;
+		if ( count % 1000 == 0 )
+			cout << count << " numbers printed to file.\n";
 	}
 
 	out.close();

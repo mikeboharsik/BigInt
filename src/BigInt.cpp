@@ -6,6 +6,43 @@
 
 #include "BigInt.h"
 
+std::string cust_to_string( int n )
+{
+	char tmp[20];
+	sprintf( tmp, "%d", n );
+	return std::string( tmp );
+}
+std::string cust_to_string( long n )
+{
+	char tmp[20];
+	sprintf( tmp, "%ld", n );
+	return std::string( tmp );
+}
+std::string cust_to_string( long long n )
+{
+	char tmp[20];
+	sprintf( tmp, "%lld", n );
+	return std::string( tmp );
+}
+std::string cust_to_string( unsigned n )
+{
+	char tmp[20];
+	sprintf( tmp, "%u", n );
+	return std::string( tmp );
+}
+std::string cust_to_string( unsigned long n )
+{
+	char tmp[20];
+	sprintf( tmp, "%lu", n );
+	return std::string( tmp );
+}
+std::string cust_to_string( unsigned long long n )
+{
+	char tmp[20];
+	sprintf( tmp, "%llu", n );
+	return std::string( tmp );
+}
+
 BigInt::BigInt()
 {
 	data.push_back( '0' );
@@ -23,7 +60,7 @@ BigInt::BigInt( int x )
 	else
 		isNegative = false;
 
-	data = to_string( x );
+	data = cust_to_string( x );
 }
 
 BigInt::BigInt( string x )
@@ -49,7 +86,7 @@ BigInt::BigInt( string x )
 		index++;
 		if ( index == x.size() - 1 )
 		{
-			std::cout << "Tried to construct BigInt from invalid string:\n" << x << "\nExiting...\n";
+			cout << "Tried to construct BigInt from invalid string:\n" << x << "\nExiting...\n";
 			exit( 1 );
 		}
 	}
@@ -58,7 +95,7 @@ BigInt::BigInt( string x )
 	// if char after initial valid char is not a digit, exit
 	if ( !isdigit( x[firstValidIndex + 1] ) )
 	{
-		std::cout << "Tried to construct BigInt from invalid string:\n" << x << "\nExiting...\n";
+		cout << "Tried to construct BigInt from invalid string:\n" << x << "\nExiting...\n";
 		exit( 1 );
 	}
 
