@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////
-//         Written by Michael Hennessy          //
+//         Written by A CompSci Student         //
 //  For Dr. David Adams's Computing III Class   //
 //          UML Spring Semester 2015            //
 //////////////////////////////////////////////////
@@ -7,20 +7,19 @@
 #ifndef BIGINT_H
 #define BIGINT_H
 
-#include <cstdio> // for sprintf (maintains compatibility with g++)
 #include <cstdlib> // for std::exit
 #include <iostream>
 #include <string>
+#include <sstream>
 
-// this BS maintains most functionality;
-// weird edge-case behavior at -(2^32) numbers,
-// but you shouldn't be inlining huge (tiny) number initialization anyway
-std::string cust_to_string( int n );
-std::string cust_to_string( long n );
-std::string cust_to_string( long long n );
-std::string cust_to_string( unsigned n );
-std::string cust_to_string( unsigned long n );
-std::string cust_to_string( unsigned long long n );
+// this will maintain compatibility with some compilers
+template <typename T>
+std::string to_string( T n )
+{
+	std::ostringstream s;
+	s << n;
+	return s.str();
+}
 
 using namespace std;
 
@@ -56,7 +55,7 @@ private:
 	string sum( string left, string right );
 	string difference( string left, string right );
 
-	string singleDigitProduct( char left, char right ) { return cust_to_string( (left - '0') * (right - '0') ); }
+	string singleDigitProduct( char left, char right ) { return to_string( (left - '0') * (right - '0') ); }
 
 	int charToInt( char c ) { return c - '0'; }
 	char intToChar( int n ) { return n + '0'; }

@@ -1,47 +1,10 @@
 //////////////////////////////////////////////////
-//         Written by Michael Hennessy          //
+//         Written by A CompSci Student         //
 //  For Dr. David Adams's Computing III Class   //
 //          UML Spring Semester 2015            //
 //////////////////////////////////////////////////
 
 #include "BigInt.h"
-
-std::string cust_to_string( int n )
-{
-	char tmp[20];
-	sprintf( tmp, "%d", n );
-	return std::string( tmp );
-}
-std::string cust_to_string( long n )
-{
-	char tmp[20];
-	sprintf( tmp, "%ld", n );
-	return std::string( tmp );
-}
-std::string cust_to_string( long long n )
-{
-	char tmp[20];
-	sprintf( tmp, "%lld", n );
-	return std::string( tmp );
-}
-std::string cust_to_string( unsigned n )
-{
-	char tmp[20];
-	sprintf( tmp, "%u", n );
-	return std::string( tmp );
-}
-std::string cust_to_string( unsigned long n )
-{
-	char tmp[20];
-	sprintf( tmp, "%lu", n );
-	return std::string( tmp );
-}
-std::string cust_to_string( unsigned long long n )
-{
-	char tmp[20];
-	sprintf( tmp, "%llu", n );
-	return std::string( tmp );
-}
 
 BigInt::BigInt()
 {
@@ -60,7 +23,7 @@ BigInt::BigInt( int x )
 	else
 		isNegative = false;
 
-	data = cust_to_string( x );
+	data = to_string( x );
 }
 
 BigInt::BigInt( string x )
