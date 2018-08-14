@@ -10,7 +10,7 @@
 
 int main(int argc, char* argv[])
 {
-  /*BigInt x;
+  BigInt x;
   BigInt y;
   BigInt result;
 
@@ -36,12 +36,7 @@ int main(int argc, char* argv[])
       cout << count << " numbers printed to file.\n";
   }
 
-  out.close();*/
-
-  BigInt x = BigInt("3");
-  BigInt y = BigInt("100");
-
-  cout << x % y << "\n";
+  out.close();
 
   return 0;
 }

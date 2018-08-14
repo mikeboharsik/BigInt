@@ -477,7 +477,7 @@ BigInt BigInt::remainderOfDivision(const string& numerator, const string& denomi
       l = l - r;
 
       if (l.isNegative)
-        return BigInt(denominator) - (BigInt(l) * BigInt(-1));
+        return BigInt(denominator) + BigInt(l);
       else if (l == BigInt("0"))
         return BigInt("0");
     }
