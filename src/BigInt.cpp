@@ -1,9 +1,3 @@
-//////////////////////////////////////////////////
-//         Written by A CompSci Student         //
-//  For Dr. David Adams's Computing III Class   //
-//          UML Spring Semester 2015            //
-//////////////////////////////////////////////////
-
 #include "BigInt.h"
 
 BigInt::BigInt()
